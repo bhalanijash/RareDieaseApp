@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Rare Diseases{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1>Rare Diseases Registry</h1>
+        <nav>
+            <a href="/">Home</a> | <a href="/add">Add Disease</a>
+        </nav>
+    </header>
+    <hr>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    
+    <footer>
+        <hr>
+        <p>&copy; 2025 Rare Diseases Registry</p>
+    </footer>
+</body>
+</html>

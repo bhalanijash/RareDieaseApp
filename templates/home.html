@@ -1,4 +1,23 @@
-<html>
+{% extends "base.html" %}
 
-<h1>HI</h1>
-</html>
+{% block title %}Home - Rare Diseases{% endblock %}
+
+{% block content %}
+    <h2>Rare Diseases List</h2>
+
+    {% if diseases %}
+        <ul>
+            {% for disease in diseases %}
+                <li>
+                    <strong>{{ disease['name'] }}</strong>: {{ disease['description'] }}
+                    <a href="{{ url_for('edit', id=disease['id']) }}">[Edit]</a>
+                    <a href="{{ url_for('delete', id=disease['id']) }}" onclick="return confirm('Are you sure?')">[Delete]</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No diseases have been added yet.</p>
+    {% endif %}
+
+    <a href="{{ url_for('add') }}">Add New Disease</a>
+{% endblock %}

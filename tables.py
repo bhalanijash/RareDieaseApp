@@ -14,7 +14,3 @@ def create_tables():
 
     conn.commit()
     conn.close()
-
-if __name__ == "__main__":
-    create_tables()
-    print("MySQL table created successfully!")
