@@ -5,8 +5,7 @@ from disease import get_all_diseases, add_disease, get_disease_by_id, update_dis
 app = Flask(__name__)
 
 # Ensure database tables exist when app starts
-with app.app_context():
-    create_tables()
+create_tables()
 
 @app.route('/')
 def home():
